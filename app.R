@@ -5,7 +5,7 @@ library(plotly)
 library(GGally)
 
 cat('\014')
-setwd('~/workspace/MSAN_viz/hw3/')
+#setwd('~/workspace/MSAN_viz/hw3/')
 fb <- read.csv('dataset_Facebook.csv',sep = ';')
 types <- levels(fb$Type)
 y_axis <- c("Lifetime.Post.Total.Reach","Lifetime.Post.Total.Impressions","Lifetime.Engaged.Users","Lifetime.Post.Consumers","Lifetime.Post.Consumptions")
