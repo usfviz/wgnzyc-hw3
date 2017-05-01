@@ -14,13 +14,11 @@ x_axis <- c("Post.Month","Post.Weekday")
 ui <- fluidPage(
   headerPanel('Facebook data'),
   sidebarPanel(
-    radioButtons("type", "Type", choices = types)
-    
+    conditionalPanel(condition = "input.conditionedPanels == 1",
+    radioButtons("type", "Type", choices = types))
   ),
   mainPanel(
-    uiOutput("ggvis_ui"),
-    ggvisOutput("ggvis"),
-    tabsetPanel(id = 'tabs',
+    tabsetPanel(id = 'conditionedPanels',
       tabPanel("user engaged", plotlyOutput("hist1"),value = 1),
       tabPanel("scatterplot matrix", plotlyOutput("hist2"), value = 2) ,
       tabPanel("Parallel Coordinates Plot", plotlyOutput("hist3"),value = 3))
